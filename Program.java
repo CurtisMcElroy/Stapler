@@ -32,9 +32,12 @@ class Stapler{
 	
 	public void loadStaples(int s){
 		//Update staples variable to be s more, but no more than 500 total.
-		if ( staples < 0) {
-			if (s > 0) {
-				
+		if (s > 0) {
+			staples = staples + s;
+			if (staples > 500) {
+				if (staples > 500) {
+				staples = 500;	
+				}
 			}
 		}
 		//If s is not positive, ignore the value
