@@ -1,4 +1,5 @@
 
+
 public class Program {
 	public static void main(String[] args) {
 		//Code to test your stapler.  Do not edit.
@@ -36,7 +37,7 @@ class Stapler{
 			staples = staples + s;
 			if (staples > 500) {
 				if (staples > 500) {
-				staples = 500;	
+					staples = 500;	
 				}
 			}
 		}
@@ -48,19 +49,31 @@ class Stapler{
 	public boolean staple(){
 		//1.  If the stapler is closed and not out of staples, staple!
 		//2.  Reduce the number of staples by 1 & return true.
-		//If there was a problem stapling (not closed, out of staples) return false;
 		
+		if ( isOpen == false && staples > 0 ) {
+			while (staples > 0) {
+				staples = staples - 1;
+			}
+			return true;
+		}
+			
+		
+		
+		
+		//If there was a problem stapling (not closed, out of staples) return false;
+			 
 		return false;
+			 
 	}
 	
 	public void open(){
 		//Open the stapler
-		
+		isOpen = true;
 	}
 	
 	public void close(){
 		//Close the stapler;
-		
+		isOpen = false;
 	}
 	
 	public int getStaples(){
